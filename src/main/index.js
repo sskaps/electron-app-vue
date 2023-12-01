@@ -1,9 +1,12 @@
 import { app, shell, BrowserWindow } from 'electron'
+import update from './update'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 
 function createWindow() {
+  update()
+
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 900,
@@ -16,6 +19,9 @@ function createWindow() {
       sandbox: false
     }
   })
+
+  // Open the DevTools. F12 控制台
+  mainWindow.webContents.openDevTools()
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
