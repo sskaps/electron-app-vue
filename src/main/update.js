@@ -31,8 +31,8 @@ function update () {
       title: '应用有新的版本',
       message: '发现新版本，是否现在更新？',
       buttons: ['是', '否']
-    }, buttonIndex => {
-      if (buttonIndex === 0) {
+    }).then(res => {
+      if (res.response === 0) {
         autoUpdater.downloadUpdate()
       }
     })
@@ -55,7 +55,7 @@ function update () {
     dialog.showMessageBox({
       title: '安装更新',
       message: '更新下载完毕，应用将重启并进行安装'
-    }, () => {
+    }).then(() => {
       setImmediate(() => autoUpdater.quitAndInstall())
     })
   })

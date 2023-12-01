@@ -1,6 +1,6 @@
 owner: sskaps
 repo: electron-app-vue
 provider: github
-token: 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
+token: 
 releaseType: release
 updaterCacheDirName: electron-app-vue-updater

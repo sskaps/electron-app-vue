@@ -40,6 +40,6 @@ npmRebuild: false
 publish:
   provider: github
   owner: sskaps
-  token: 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
+  token: 
   repo: electron-app-vue
   releaseType: release
